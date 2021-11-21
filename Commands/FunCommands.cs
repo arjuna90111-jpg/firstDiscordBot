@@ -14,17 +14,17 @@ namespace DiscordBot.Commands
     public class FunCommands:BaseCommandModule
     {
         [Command("ping")]
-        [Description("Return Message")]
+        [Description("返回訊息")]
         public async Task Ping(CommandContext ctx)
         {
            await ctx.Channel.SendMessageAsync("Pong!").ConfigureAwait(false);
         }
 
         [Command("add")]
-        [Description("Adds two numbers together")]
+        [Description("兩數相加")]
         public async Task Add(CommandContext ctx,
-            [Description("First Number")] int numberOne,
-            [Description("Second Number")]int numberTwo)
+            [Description("第一個數字")] int numberOne,
+            [Description("第二個數字")]int numberTwo)
         {
             await ctx.Channel
                 .SendMessageAsync((numberOne + numberTwo).ToString())
@@ -33,10 +33,10 @@ namespace DiscordBot.Commands
 
 
         [Command("sub")]
-        [Description("Subs two numbers together")]
+        [Description("兩數相減")]
         public async Task Sub(CommandContext ctx,
-            [Description("First Number")] int numberOne,
-            [Description("Second Number")]int numberTwo)
+            [Description("第一個數字")] int numberOne,
+            [Description("第二個數字")]int numberTwo)
         {
             await ctx.Channel
                 .SendMessageAsync((numberOne - numberTwo).ToString())
@@ -45,10 +45,10 @@ namespace DiscordBot.Commands
 
 
         [Command("mul")]
-        [Description("Subs two numbers together")]
+        [Description("兩數相乘")]
         public async Task Mul(CommandContext ctx,
-           [Description("First Number")] int numberOne,
-           [Description("Second Number")] int numberTwo)
+           [Description("第一個數字")] int numberOne,
+           [Description("第二個數字")] int numberTwo)
         {
             await ctx.Channel
                 .SendMessageAsync((numberOne * numberTwo).ToString())
@@ -57,10 +57,10 @@ namespace DiscordBot.Commands
 
 
         [Command("div")]
-        [Description("Subs two numbers together")]
+        [Description("兩數相除")]
         public async Task Div(CommandContext ctx,
-          [Description("First Number")] int numberOne,
-          [Description("Second Number")] int numberTwo)
+          [Description("第一個數字")] int numberOne,
+          [Description("第二個數字")] int numberTwo)
         {
             await ctx.Channel
                 .SendMessageAsync((numberOne / numberTwo).ToString())
@@ -69,6 +69,7 @@ namespace DiscordBot.Commands
 
 
         [Command("respondmessage")]
+        [Description("回傳一樣的訊息")]
         public async Task RespondMessage(CommandContext ctx)
         {
             var interactivity = ctx.Client.GetInteractivity();
@@ -79,6 +80,7 @@ namespace DiscordBot.Commands
         }
 
         [Command("respondreaction")]
+        [Description("回傳表情符號")]
         public async Task RespondReaction(CommandContext ctx)
         {
             var interactivity = ctx.Client.GetInteractivity();
@@ -89,7 +91,7 @@ namespace DiscordBot.Commands
         }
 
         [Command("hello")]
-        [Description("Return Message")]
+        [Description("返回訊息")]
         public async Task SixFive(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("yooooooo").ConfigureAwait(false);
@@ -97,7 +99,7 @@ namespace DiscordBot.Commands
 
 
         [Command("huh")]
-        [Description("Return Message")]
+        [Description("返回訊息")]
         public async Task Tommy(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("ayaya").ConfigureAwait(false);
